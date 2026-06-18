@@ -8,7 +8,7 @@ public class Main {
         PasswordHasher passwordHasher = new PasswordHasher();
         AuthService authService = new AuthService(passwordHasher);
         boolean running = true;
-        
+
         /* manual test of initial password hasher implementation
         PasswordHasher passwordHasher = new PasswordHasher(); //initialise passwordHasher object
         String hash = passwordHasher.hashPassword("test123");
@@ -36,9 +36,17 @@ public class Main {
                     System.out.print("Enter password: ");
                     String password = scanner.nextLine();
 
-                    authService.register(email, password);
+                    /*authService.register(email, password);
 
-                    System.out.println("Account registered.");
+                    System.out.println("Account registered.");*/
+                    
+                    boolean registrationSuccessful = authService.register(email, password);
+
+                    if (registrationSuccessful) {
+                        System.out.println("Account registered.");
+                    } else {
+                        System.out.println("Registration failed. An account is already registered.");
+                    }
                 }
                 case "2" -> {
                     System.out.print("Enter email: ");

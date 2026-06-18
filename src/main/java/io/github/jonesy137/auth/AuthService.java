@@ -8,9 +8,14 @@ public class AuthService {
         this.passwordHasher = passwordHasher;
     }
 
-    public void register(String email, String plainPassword) {
+    public boolean register(String email, String plainPassword) {
+        //if registered already, registration fails
+        if (registeredUser != null) {
+            return false;
+        }
         String passwordHash = passwordHasher.hashPassword(plainPassword);
         registeredUser = new User(email, passwordHash);
+        return true;
     }
 
     public boolean login(String email, String plainPassword) {
