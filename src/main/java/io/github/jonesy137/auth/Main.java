@@ -8,9 +8,7 @@ public class Main {
         PasswordHasher passwordHasher = new PasswordHasher();
         AuthService authService = new AuthService(passwordHasher);
         boolean running = true;
-
-
-
+        
         /* manual test of initial password hasher implementation
         PasswordHasher passwordHasher = new PasswordHasher(); //initialise passwordHasher object
         String hash = passwordHasher.hashPassword("test123");
