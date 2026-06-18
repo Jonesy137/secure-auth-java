@@ -35,7 +35,7 @@ This avoids revealing whether the email or password was the incorrect part.
 ## Technologies Used
 
 * Java
-* Maven - soon
+* Maven
 * bcrypt via jBCrypt
 
 ## Class Responsibilities
