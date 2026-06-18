@@ -2,7 +2,7 @@ package io.github.jonesy137.auth;
 
 /**
  * Handles authentication rules for registering and logging in users.
- * Currently stores one user in memory until database support is added.
+ * Currently, stores one user in memory until database support is added.
  */
 
 public class AuthService {
