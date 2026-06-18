@@ -7,6 +7,15 @@ public class Main {
         Scanner scanner = new Scanner(System.in); //initialise scanner object
         boolean running = true;
 
+        /* manual test of initial password hasher implementation
+        PasswordHasher passwordHasher = new PasswordHasher(); //initialise passwordHasher object
+        String hash = passwordHasher.hashPassword("test123");
+
+        System.out.println(hash);
+        System.out.println(passwordHasher.verifyPassword("test123", hash));
+        System.out.println(passwordHasher.verifyPassword("wrongpassword", hash));
+        */
+
         while (running) {
             //Simple startup menu
             System.out.println("Secure Auth Java is running.");
