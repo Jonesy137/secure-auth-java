@@ -17,7 +17,7 @@ public class AuthService {
         if (email.isBlank() || plainPassword.isBlank()) {
             return false;
         }
-        
+
         String passwordHash = passwordHasher.hashPassword(plainPassword);
         registeredUser = new User(email, passwordHash);
         return true;
@@ -28,6 +28,10 @@ public class AuthService {
             return false;
             //if user hasn't registered yet
             //return false
+        }
+
+        if (email.isBlank() || plainPassword.isBlank()) {
+            return false;
         }
 
         if (!registeredUser.getEmail().equals(email)) {
