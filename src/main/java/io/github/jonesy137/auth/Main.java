@@ -1,6 +1,11 @@
 package io.github.jonesy137.auth;
 import java.util.Scanner;
 
+/**
+ * Entry point for the terminal version of the authentication application.
+ * Handles user input and delegates authentication logic to AuthService.
+ */
+
 public class Main {
 
     public static void main(String[] args) {

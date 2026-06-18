@@ -1,5 +1,10 @@
 package io.github.jonesy137.auth;
 
+/**
+ * Handles authentication rules for registering and logging in users.
+ * Currently stores one user in memory until database support is added.
+ */
+
 public class AuthService {
     private final PasswordHasher passwordHasher;
     private User registeredUser;
@@ -7,6 +12,14 @@ public class AuthService {
     public AuthService(PasswordHasher passwordHasher) {
         this.passwordHasher = passwordHasher;
     }
+
+    /**
+     * Registers a user if no user is currently registered and the input is valid.
+     *
+     * @param email the user's email address
+     * @param plainPassword the user's plaintext password
+     * @return true if registration succeeds, false otherwise
+     */
 
     public boolean register(String email, String plainPassword) {
         //if registered already, registration fails
@@ -22,6 +35,14 @@ public class AuthService {
         registeredUser = new User(email, passwordHash);
         return true;
     }
+
+    /**
+     * Attempts to log in a user with the provided email and password.
+     *
+     * @param email the email entered by the user
+     * @param plainPassword the password entered by the user
+     * @return true if the login details are valid, false otherwise
+     */
 
     public boolean login(String email, String plainPassword) {
         if (registeredUser == null) {
