@@ -39,13 +39,13 @@ public class Main {
                     /*authService.register(email, password);
 
                     System.out.println("Account registered.");*/
-                    
+
                     boolean registrationSuccessful = authService.register(email, password);
 
                     if (registrationSuccessful) {
                         System.out.println("Account registered.");
                     } else {
-                        System.out.println("Registration failed. An account is already registered.");
+                        System.out.println("Registration failed. Please check your details and try again.");
                     }
                 }
                 case "2" -> {
